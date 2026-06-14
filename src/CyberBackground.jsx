@@ -124,8 +124,14 @@ function gitsSketch(p, paramsRef) {
   }
 
   p.draw = function () {
-    p.clear();
+    p.background(0, 0.025);
     frameCount++;
+
+    // Grid overlay
+    p.push();
+    p.tint(255, CONFIG.gridAlpha);
+    p.image(gridGraphics, 0, 0);
+    p.pop();
 
     // Digital rain
     p.textFont('monospace');
