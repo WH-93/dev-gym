@@ -1,0 +1,118 @@
+{
+  "project": "tshirt-shop-api",
+  "repo": "whay1/tshirt-shop-api",
+  "updated": "2026-06-14",
+  "phases": {
+    "phase-1-foundation": {
+      "label": "Phase 1 \u2014 Foundation",
+      "color": "#1e40af",
+      "issues": [
+        {
+          "number": 1,
+          "title": "Set up database migrations and seed data"
+        },
+        {
+          "number": 2,
+          "title": "Implement product listing with pagination and filtering"
+        },
+        {
+          "number": 3,
+          "title": "Structured error handling with error codes"
+        },
+        {
+          "number": 4,
+          "title": "Request validation middleware with Zod"
+        }
+      ]
+    },
+    "phase-2-core": {
+      "label": "Phase 2 \u2014 Core",
+      "color": "#7c3aed",
+      "issues": [
+        {
+          "number": 5,
+          "title": "User registration and login with JWT auth"
+        },
+        {
+          "number": 6,
+          "title": "Product variants, inventory, and stock management"
+        },
+        {
+          "number": 7,
+          "title": "Shopping cart \u2014 guest and authenticated"
+        },
+        {
+          "number": 8,
+          "title": "Checkout and order creation with transactions"
+        }
+      ]
+    },
+    "phase-3-security": {
+      "label": "Phase 3 \u2014 Security",
+      "color": "#be123c",
+      "issues": [
+        {
+          "number": 9,
+          "title": "Rate limiting and security headers"
+        },
+        {
+          "number": 10,
+          "title": "Input sanitization and injection prevention"
+        },
+        {
+          "number": 11,
+          "title": "Role-based authorization with middleware guards"
+        },
+        {
+          "number": 12,
+          "title": "Graceful shutdown and health checks"
+        }
+      ]
+    },
+    "phase-4-observability": {
+      "label": "Phase 4 \u2014 Observability",
+      "color": "#047857",
+      "issues": [
+        {
+          "number": 13,
+          "title": "Structured logging with request tracing"
+        },
+        {
+          "number": 14,
+          "title": "Integration tests with supertest and a test database"
+        },
+        {
+          "number": 15,
+          "title": "API documentation with OpenAPI"
+        },
+        {
+          "number": 16,
+          "title": "Configuration validation at startup"
+        }
+      ]
+    },
+    "phase-5-advanced": {
+      "label": "Phase 5 \u2014 Advanced",
+      "color": "#b45309",
+      "issues": [
+        {
+          "number": 17,
+          "title": "Image upload for products"
+        },
+        {
+          "number": 18,
+          "title": "Full-text search with PostgreSQL tsvector"
+        },
+        {
+          "number": 19,
+          "title": "Response caching with ETags and Cache-Control"
+        },
+        {
+          "number": 20,
+          "title": "Order confirmation emails with a background job queue"
+        }
+      ]
+    }
+  },
+  "completed": {}
+}

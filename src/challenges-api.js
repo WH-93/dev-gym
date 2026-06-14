@@ -1,5 +1,5 @@
 /**
- * Dev Gym — API Drills
+ * Shell — API Drills
  *
  * Express/REST pattern challenges with mock req/res validation.
  * Each challenge provides a handler function that receives (req, res)

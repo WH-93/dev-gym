@@ -178,7 +178,7 @@ export default function Sandbox({ code }) {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-        <span>🔬 Preview</span>
+        <span>{'\u25C9'} Preview</span>
         <span style={{
           fontSize: 11,
           padding: '2px 8px',
@@ -196,11 +196,11 @@ export default function Sandbox({ code }) {
             status === 'success' ? '#4ade80' :
             '#f87171',
         }}>
-          {status === 'idle' ? '⏳ waiting' :
-           status === 'transpiling' ? '⟳ babel' :
-           status === 'running' ? '▶ running' :
-           status === 'success' ? '✓ rendered' :
-           '✗ error'}
+          {status === 'idle' ? '\u29D6 waiting' :
+           status === 'transpiling' ? '\u21BB babel' :
+           status === 'running' ? '\u25CB running' :
+           status === 'success' ? '\u2713 rendered' :
+           '\u2717 error'}
         </span>
       </div>
 
@@ -228,7 +228,7 @@ export default function Sandbox({ code }) {
             background: '#7f1d1dee',
             color: '#fca5a5',
             fontSize: 12,
-            fontFamily: 'monospace',
+            fontFamily: '"Fira Code", "JetBrains Mono", monospace',
             maxHeight: '40%',
             overflow: 'auto',
             whiteSpace: 'pre-wrap',
@@ -243,7 +243,7 @@ export default function Sandbox({ code }) {
               textTransform: 'uppercase',
               letterSpacing: 1,
             }}>
-              ⚠ Error
+              {'\u26A0'} Error
             </div>
             {error}
           </div>

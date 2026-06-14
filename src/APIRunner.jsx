@@ -173,7 +173,7 @@ export default function APIRunner({ code, requestSpec, expectedResponse, onCheck
       React.createElement('div', { style: { padding: '6px 12px', fontSize: 11, color: '#64748b', borderBottom: '1px solid #1e293b', fontWeight: 700 } },
         'Request'
       ),
-      React.createElement('div', { style: { padding: 10, fontFamily: 'monospace', fontSize: 12, color: '#cbd5e1' } },
+      React.createElement('div', { style: { padding: 10, fontFamily: '"Fira Code", "JetBrains Mono", monospace', fontSize: 12, color: '#cbd5e1' } },
         React.createElement('div', null,
           React.createElement('span', { style: { color: '#818cf8', fontWeight: 600 } }, requestSpec.method || 'GET'),
           ' ',
@@ -195,7 +195,7 @@ export default function APIRunner({ code, requestSpec, expectedResponse, onCheck
           : React.createElement('span', { style: { color: '#4ade80' } },
               result.status + ' ' + (result.status >= 400 ? 'Error' : result.status >= 300 ? 'Redirect' : 'OK'))
       ),
-      React.createElement('div', { style: { padding: 10, fontFamily: 'monospace', fontSize: 12 } },
+      React.createElement('div', { style: { padding: 10, fontFamily: '"Fira Code", "JetBrains Mono", monospace', fontSize: 12 } },
         result.error
           ? React.createElement('pre', { style: { color: '#fca5a5', whiteSpace: 'pre-wrap', margin: 0 } }, result.error)
           : React.createElement('pre', { style: { color: '#94a3b8', whiteSpace: 'pre-wrap', margin: 0 } },

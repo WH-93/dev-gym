@@ -1,0 +1,72 @@
+{
+  "updated": "2026-06-14T17:15:30.707702",
+  "count": 6,
+  "insights": [
+    {
+      "title": "Mentor Synthesis: Experimentation + Clarification — The Two Sides of Agent Mastery",
+      "date": "2026-06-04",
+      "source": "2026-06-04-mentor-synthesis-experimentation-clarification.md",
+      "category": "synthesis",
+      "through_line": null,
+      "key_insight": "Two talks captured on the same day reveal two complementary halves of what it means to work effectively with AI coding agents:\n\n**Karpathy** identifies the *failure mode*: agents assume, don't ask, don't manage confusion, and produce bloated code. His fix is a *principle* — \"Think Before Coding\": force the agent to state assumptions, ask when uncertain, present tradeoffs.\n\n**Mihail Eric** identifies the *process gap*: no one has best practices yet. Even Anthropic is experimenting in real-time. His fix is a *practice* — build systematic experimentation into your workflow. Try tools, measure results, iterate.\n\nTogether: **Principle tells you what to optimize for. Process tells you how to discover the right implementation for your context.**",
+      "practice_nudge": null,
+      "heuristics": [],
+      "excerpt": "**Date:** 2026-06-04\n**Sources:** Mihail Eric (Stanford) + Andrej Karpathy — both captured 2026-05-29\n**Related insights:** 2026-05-29-mihail-eric-managing-agents-summary.md, 2026-05-29-karpathy-think-before-coding-summary.md, 2026-05-29-agent-workflow-mentor-summary.md\n\n\n\nTwo ta"
+    },
+    {
+      "title": "Mentoring session — Whiteboard-reveal PR review",
+      "date": "2026-06-01",
+      "source": "2026-06-01-whiteboard-reveal-pr-review.md",
+      "category": "mentoring",
+      "through_line": "Warren's friction is not simply that AI-written PRs may be wrong. The harder cost is post-hoc comprehension: after the AI has implemented a change, he has to manually reconstruct the codebase context, intended design, file relationships, and correctness argument.\n\nThis connects Naval's \"AI factory\" idea with the earlier human/agent boundary theme. The useful factory is not only code generation. It is a reviewable context-and-change loop that helps Warren understand unfamiliar codebases faster while still owning judgment.",
+      "key_insight": null,
+      "practice_nudge": null,
+      "heuristics": [],
+      "excerpt": "Date: 2026-06-01\n\n\n\nWarren's friction is not simply that AI-written PRs may be wrong. The harder cost is post-hoc comprehension: after the AI has implemented a change, he has to manually reconstruct the codebase context, intended design, file relationships, and correctness argume"
+    },
+    {
+      "title": "Mentor Synthesis: The Thinking-Tool Boundary",
+      "date": "2026-05-31",
+      "source": "2026-05-31-mentor-synthesis.md",
+      "category": "synthesis",
+      "through_line": null,
+      "key_insight": "Three speakers, same diagnosis from three different angles:\n\n| Speaker | Talk | Core Warning |\n|---------|------|-------------|\n| Karpathy | CLAUDE.md / Think Before Coding | Agents make wrong assumptions silently. Force them to ask first. |\n| Eric | Writing Code → Managing Agents | Build experimentation into your workflow. Nobody has this figured out. |\n| Horthy | Everything Wrong With RPI | Outsourcing thinking to agents = 50% more output, 50% cleanup. |\n\nThey're all describing the same boundary: **where human thinking stops and agent execution begins.** Get the boundary wrong — put it too far toward the agent — and you get bloated code, wrong assumptions, cleanup debt. Get it right — keep ownership of the architecture, force assumption-surfacing, iterate — and the agent becomes an amplifier.\n\n---",
+      "practice_nudge": null,
+      "heuristics": [],
+      "excerpt": "*May 29–30, 2026 — three talks, one product concept*\n\n---\n\n\n\nThree speakers, same diagnosis from three different angles:\n\n| Speaker | Talk | Core Warning |\n|---------|------|-------------|\n| Karpathy | CLAUDE.md / Think Before Coding | Agents make wrong assumptions silently. Forc"
+    },
+    {
+      "title": "Next Step — System Architecture Question Drill",
+      "date": "2026-05-30",
+      "source": "2026-05-30-next-step.md",
+      "category": "mentoring",
+      "through_line": null,
+      "key_insight": null,
+      "practice_nudge": null,
+      "heuristics": [],
+      "excerpt": "**Date:** May 30, 2026\n**Time budget:** 30-60 minutes\n\n---\n\n\n\nPick one system at work you touch but don't deeply understand yet.\nOpen a session with an AI agent and ask it these three questions about the system's design:\n\n1. Why is it built this way?\n2. What assumption does this "
+    },
+    {
+      "title": "Mentoring Session — May 30, 2026",
+      "date": "2026-05-30",
+      "source": "2026-05-30-problem-decomposition.md",
+      "category": "mentoring",
+      "through_line": "Three talks in two days form an arc about agent limitations:\n\n| Date | Speaker | Finding |\n|------|---------|---------|\n| May 29 | Mihail Eric | Nobody has this figured out — even Anthropic experiments constantly |\n| May 29 | Andrej Karpathy | Agents fail by assuming — Think Before Coding |\n| May 30 | Dexter Horthy | Even structured frameworks (RPI) break on complex brownfield |",
+      "key_insight": null,
+      "practice_nudge": "Add a \"next step\" career progression task at the end of each mentoring session — a small, concrete thing to try in spare time that connects the discussion to practice (e.g., a small Docker task, a proof-led decomposition drill).",
+      "heuristics": [],
+      "excerpt": "Three talks in two days form an arc about agent limitations:\n\n| Date | Speaker | Finding |\n|------|---------|---------|\n| May 29 | Mihail Eric | Nobody has this figured out — even Anthropic experiments constantly |\n| May 29 | Andrej Karpathy | Agents fail by assuming — Think Befo"
+    },
+    {
+      "title": "Mentor Summary: The Agent Workflow Shift",
+      "date": "2026-05-29",
+      "source": "2026-05-29-agent-workflow-mentor-summary.md",
+      "category": "synthesis",
+      "through_line": null,
+      "key_insight": null,
+      "practice_nudge": null,
+      "heuristics": [],
+      "excerpt": "*Synthesized from two raw captures — May 29, 2026*\n\n---\n\n\n\nTwo talks landed in the raw folder today, and they're two sides of the same coin:\n\n| Source | Speaker | Core Idea |\n|--------|---------|-----------|\n| Stanford talk | Mihail Eric | Everyone is experimenting — even Anthrop"
+    }
+  ]
+}
