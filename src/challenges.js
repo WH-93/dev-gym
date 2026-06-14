@@ -17,6 +17,7 @@ import advancedReactChallenges from './challenges-advanced-react.js';
 import testingChallenges from './challenges-testing.js';
 import dataFetchingChallenges from './challenges-datafetching.js';
 import messagingChallenges from './challenges-messaging.js';
+import apiChallenges from './challenges-api.js';
 
 const challenges = [
   {
@@ -432,7 +433,8 @@ var advancedReactWithCat = advancedReactChallenges.map(function(c) { return Obje
 var testingWithCat = testingChallenges.map(function(c) { return Object.assign({}, c, { category: 'testing' }); });
 var dataFetchingWithCat = dataFetchingChallenges.map(function(c) { return Object.assign({}, c, { category: 'data' }); });
 var messagingWithCat = messagingChallenges.map(function(c) { return Object.assign({}, c, { category: 'messaging' }); });
+var apiWithCat = apiChallenges.map(function(c) { return Object.assign({}, c, { category: 'api' }); });
 
-var allChallenges = [...coreChallenges, ...extendedWithCat, ...compositionWithCat, ...dockerWithCat, ...orpcWithCat, ...advancedReactWithCat, ...testingWithCat, ...dataFetchingWithCat, ...messagingWithCat];
+var allChallenges = [...coreChallenges, ...extendedWithCat, ...compositionWithCat, ...dockerWithCat, ...orpcWithCat, ...advancedReactWithCat, ...testingWithCat, ...dataFetchingWithCat, ...messagingWithCat, ...apiWithCat];
 
 export default allChallenges;

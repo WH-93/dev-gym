@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import allChallenges from './challenges';
 import ExecutionSandbox from './ExecutionSandbox';
 import SyntaxSandbox from './SyntaxSandbox';
+import APIRunner from './APIRunner';
 
 // Top-level drill categories
 var DRILL_TYPES = [
@@ -24,8 +25,9 @@ var DRILL_TYPES = [
     key: 'api',
     label: 'API',
     icon: '🔌',
-    tabs: [], // coming soon — placeholder tabs
-    comingSoon: true,
+    tabs: [
+      { key: 'api', label: 'Express', icon: '🔌' },
+    ],
   },
 ];
 
@@ -389,7 +391,24 @@ export default function App() {
 
       // Right: Preview + Actions
       React.createElement('div', { style: { width: '45%', minWidth: 380, display: 'flex', flexDirection: 'column' } },
-        SYNTAX_TABS.indexOf(category) === -1 && React.createElement('div', { style: { flex: 1, padding: 12, display: 'flex', flexDirection: 'column' } },
+        // API Runner for API drills
+        category === 'api' && React.createElement('div', { style: { flex: 1, padding: 12, display: 'flex', flexDirection: 'column' } },
+          React.createElement(APIRunner, {
+            code: code,
+            requestSpec: challenge.requestSpec,
+            expectedResponse: challenge.expectedResponse,
+            onCheck: function(result) {
+              if (!challenge) return;
+              setFeedback(result);
+              setResults(function(prev) { var n = {}; n[challenge.id] = result.pass; return Object.assign({}, prev, n); });
+              if (result.pass) {
+                setSolved(function(prev) { var n = {}; n[challenge.id] = true; return Object.assign({}, prev, n); });
+              }
+            },
+          })
+        ),
+        // Execution sandbox for hooks/composition
+        SYNTAX_TABS.indexOf(category) === -1 && category !== 'api' && React.createElement('div', { style: { flex: 1, padding: 12, display: 'flex', flexDirection: 'column' } },
           React.createElement(ExecutionSandbox, { code: code })
         ),
 
@@ -540,4 +559,11 @@ var hints = {
   'kafka-consumer-group': 'consumer({ groupId: "order-processor" }). subscribe({ topic: "orders", fromBeginning: false }). eachMessage: process + commitOffsets. Graceful shutdown on SIGTERM.',
   'kafka-topic-config': 'admin.createTopics({ topics: [{ topic: "orders", numPartitions: 6, replicationFactor: 3, configEntries: [{ name: "retention.ms", value: "604800000" }] }] }).',
   'kafka-transactions': 'producer: { transactionalId, maxInFlightRequests: 1 }. consumer isolationLevel: read_committed. Flow: transaction().begin() → send → sendOffsets → commit(). abort() on error.',
+  // API Drills
+  'api-basic-json': 'Call res.status(200).json({ status: "ok", version: "1.0" }). The .json() method sets Content-Type and sends the response.',
+  'api-route-params': 'Read req.params.userId and construct the response: res.status(200).json({ id: req.params.userId, name: "User " + req.params.userId }).',
+  'api-request-body': 'Destructure name from req.body. Return res.status(201).json({ id: 1, name: req.body.name }) — omit email from the response.',
+  'api-query-params': 'Check if req.query.q exists. If not: res.status(400).json({ error: "Missing query parameter: q" }). Otherwise: res.status(200).json({ results: [], query: req.query.q }).',
+  'api-error-handling': 'Check if req.body.title is falsy OR empty string. If so: res.status(400).json({ error: "VALIDATION_ERROR", message: "Title is required" }). Else: res.status(201).json({ id: 1, title: req.body.title }).',
+  'api-auth-middleware': 'Check req.headers.authorization === "Bearer secret-token". If match: res.status(200).json({ data: "protected" }). Else: res.status(401).json({ error: "Unauthorized" }).',
 };
