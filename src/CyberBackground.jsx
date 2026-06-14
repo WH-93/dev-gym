@@ -127,6 +127,7 @@ function gitsSketch(p, paramsRef) {
 
   function buildScanBuffer() {
     scanGraphics = p.createGraphics(w, h);
+    scanGraphics.colorMode(scanGraphics.RGB, 255, 255, 255, 1);
     scanGraphics.noStroke();
   }
 
