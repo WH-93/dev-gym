@@ -29,6 +29,13 @@ var DRILL_TYPES = [
       { key: 'api', label: 'Express', icon: '🔌' },
     ],
   },
+  {
+    key: 'mentoring',
+    label: 'Mentoring',
+    icon: '🧠',
+    tabs: [],
+    comingSoon: true,
+  },
 ];
 
 // Flatten for quick lookup: which tabs use SyntaxSandbox vs ExecutionSandbox
@@ -265,7 +272,25 @@ export default function App() {
               !dt.comingSoon && counts && React.createElement('span', { style: { fontSize: 10, color: active ? '#818cf8' : '#475569' } },
                 counts.solved + '/' + counts.total)
             );
-          })
+          }),
+
+        // typedash external link
+        React.createElement('a', {
+          href: 'https://typedash.dev',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          style: {
+            padding: '5px 12px', border: '1px solid #1e293b', borderRadius: 6,
+            background: 'transparent', color: '#64748b', cursor: 'pointer',
+            fontSize: 12, fontWeight: 400, display: 'flex', alignItems: 'center', gap: 5,
+            textDecoration: 'none', marginLeft: 4,
+          },
+          title: 'Typing speed practice for developers',
+        },
+          React.createElement('span', null, '⌨️'),
+          React.createElement('span', null, 'Typing'),
+          React.createElement('span', { style: { fontSize: 10, color: '#475569' } }, '↗')
+        ),
         )
       ),
       // Row 2: Tab nav + progress (only if drill type has tabs)
