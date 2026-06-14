@@ -56,6 +56,7 @@ function gitsSketch(p, paramsRef) {
   var frameCount = 0;
   var rng;
   var gridGraphics;
+  var scanGraphics;
 
   // Current effective hue shift (read from ref each frame)
   var getHueShift = function () {
@@ -98,6 +99,7 @@ function gitsSketch(p, paramsRef) {
     rng = makePRNG(CONFIG.seed);
 
     buildGrid();
+    buildScanBuffer();
     for (var i = 0; i < CONFIG.rainCount; i++) {
       drops.push(createDrop(w, h, rng));
     }
@@ -121,6 +123,11 @@ function gitsSketch(p, paramsRef) {
         gridGraphics.line(gx, gy, gx + dl, gy);
       }
     }
+  }
+
+  function buildScanBuffer() {
+    scanGraphics = p.createGraphics(w, h);
+    scanGraphics.noStroke();
   }
 
   p.draw = function () {
@@ -187,17 +194,21 @@ function gitsSketch(p, paramsRef) {
       }
     }
 
-    // Scanning line
+    // Scanning line — offscreen buffer, clear per frame = no trail
     scanY += CONFIG.scanSpeed;
     if (scanY > h) scanY = 0;
+    scanGraphics.clear();
+
     var scanCol = rainColor(1.0, CONFIG.scanAlpha);
-    p.fill(scanCol.r, scanCol.g, scanCol.b, scanCol.a);
-    p.rect(0, scanY, w, CONFIG.scanHeight);
+    scanGraphics.fill(scanCol.r, scanCol.g, scanCol.b, scanCol.a);
+    scanGraphics.rect(0, scanY, w, CONFIG.scanHeight);
 
     var scanY2 = h - ((scanY + h * 0.37) % h);
     var scanCol2 = rainColor(0.8, CONFIG.scanAlpha * 0.5);
-    p.fill(scanCol2.r, scanCol2.g, scanCol2.b, scanCol2.a);
-    p.rect(0, scanY2, w, 1);
+    scanGraphics.fill(scanCol2.r, scanCol2.g, scanCol2.b, scanCol2.a);
+    scanGraphics.rect(0, scanY2, w, 1);
+
+    p.image(scanGraphics, 0, 0);
   };
 
   p.windowResized = function () {
@@ -205,6 +216,7 @@ function gitsSketch(p, paramsRef) {
     h = p.windowHeight;
     p.resizeCanvas(w, h);
     buildGrid();
+    buildScanBuffer();
 
     drops = [];
     for (var i = 0; i < CONFIG.rainCount; i++) {
