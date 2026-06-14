@@ -1,0 +1,139 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar reset */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #0f172a;
+}
+
+/* ─── Docker Syntax Sandbox ─────────────────────────── */
+.sandbox-container {
+  display: flex;
+  height: 100%;
+  background: #0f172a;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.sandbox-gutter {
+  flex-shrink: 0;
+  width: 48px;
+  background: #0a0f1e;
+  border-right: 1px solid #1e293b;
+  padding: 12px 0 12px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.gutter-line {
+  padding: 0 12px 0 16px;
+  text-align: right;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.55;
+  height: 20.93px;
+}
+
+.sandbox-editor-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.sandbox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: pre;
+  color: transparent;
+}
+
+.sandbox-line {
+  height: 20.93px;
+  white-space: pre;
+}
+
+.sandbox-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #e2e8f0;
+  font: inherit;
+  line-height: inherit;
+  white-space: pre;
+  overflow: auto;
+  tab-size: 2;
+  -webkit-text-fill-color: transparent;
+}
+
+.sandbox-textarea::selection {
+  background: rgba(99, 102, 241, 0.35);
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Docker Syntax highlighting ──────────────────────── */
+.hl-keyword { color: #818cf8; font-weight: 600; }
+.hl-key      { color: #a78bfa; }
+.hl-string   { color: #34d399; }
+.hl-number   { color: #fbbf24; }
+.hl-boolean  { color: #fb923c; }
+.hl-comment  { color: #475569; font-style: italic; }
+.hl-punctuation { color: #64748b; }
+.hl-plain    { color: #e2e8f0; }
+
+/* ─── Docker sandbox scrollbar ─────────────────────────── */
+.sandbox-textarea::-webkit-scrollbar,
+.sandbox-overlay::-webkit-scrollbar { width: 8px; height: 8px; }
+.sandbox-textarea::-webkit-scrollbar-track,
+.sandbox-overlay::-webkit-scrollbar-track { background: #0f172a; }
+.sandbox-textarea::-webkit-scrollbar-thumb,
+.sandbox-overlay::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+.sandbox-textarea::-webkit-scrollbar-thumb:hover,
+.sandbox-overlay::-webkit-scrollbar-thumb:hover { background: #475569; }
